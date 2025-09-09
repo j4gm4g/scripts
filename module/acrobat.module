@@ -1,0 +1,12 @@
+#!name=Acrobat
+
+#!desc=Acrobat premium by j4gm4g
+
+# 1. Login to activate premium  2. Thanks to t.me/crackhub_69
+
+[MITM]
+hostname = %APPEND% dc-api-v2.adobe.io
+
+[Script]
+acro-sub = type=http-response,pattern=^https:\/\/dc-api-v2\.adobe\.io\/\d+\/users\/self\/subscriptions,requires-body=1,script-path=https://j4gm4g.github.io/scripts/js/acro-sub.js
+acro-limit = type=http-response,pattern=^https:\/\/dc-api-v2\.adobe\.io\/\d+\/users\/self\/limits\/conversions,requires-body=1,script-path=https://j4gm4g.github.io/scripts/js/acro-limit.js
