@@ -1,1 +1,23 @@
-
+name: Duolingo
+description: Duolingo Max by j4gm4g
+scriptings:
+- http_response:
+    name: duo-level
+    match: ^https:\/\/ios-api-cf\.duolingo\.com\/.*\/users\/.*\?fields=subscriberLevel
+    script_url: https://j4gm4g.github.io/scripts/js/duo-level.js
+    body_required: true
+- http_response:
+    name: duo-features
+    match: ^https:\/\/ios-api-cf\.duolingo\.com\/.*\/users\/.*\/available-features.*$
+    script_url: https://j4gm4g.github.io/scripts/js/duo-features.js
+    body_required: true
+- http_response:
+    name: duo-batch
+    match: https://ios-api-cf.duolingo.com/2023-05-23/batch
+    script_url: https://j4gm4g.github.io/scripts/js/duo-batch.js
+    body_required: true
+    
+mitm:
+  hostnames:
+    includes:
+    - ios-api-cf.duolingo.com
